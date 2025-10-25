@@ -1,0 +1,307 @@
+ 
+ /* Page set up */
+ /* colors from https://coolors.co/ */
+
+  /* Color Palette:
+        - Dark Moss Green: #606C38
+        - Pakistan Green: #283618
+        - Cornsilk: #FEFAE0
+        - Earth Yellow: #DDA15E
+        - Tiger's Eye: #BC6C25
+    */
+
+    /* IMPORTING SERIF FONT FROM GOOGLE FONTS */
+    /* https://www.w3schools.com/css/css_font_google.asp */
+    /* https://fonts.google.com/selection/embed */
+   @import url('https://fonts.googleapis.com/css2?family=Allura&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+   /* HERE I will apply colors variables to be easier to update during the code fase */
+    /* Documentation on W3 on how to apply variables to CSS */
+    /* https://www.w3schools.com/css/css3_variables.asp */
+  
+    :root {
+            --dark-green: #283618;
+            --moss-green: #606C38;
+            --cornsilk: #FEFAE0;
+            --earth-yellow: #DDA15E;
+            --tigers-eye: #BC6C25;
+            --text-dark: #2d3748; 
+            --text-light: #718096; 
+            --border-light: #e2e8f0; 
+            --light-background: #fff;
+            --textHeaderFamily: "Lora", serif;
+            --textBodyFamility: "Inter", sans-serif;
+            --textSignatureFamilty: "Allura", cursive
+
+        }
+
+         
+  
+    body {
+            font-family: var(--textBodyFamility);
+            background-color: var(--cornsilk);
+            color: var(--text-dark);
+        }
+
+ .page-container {
+            max-width: 1200px;
+            margin: 16px auto;
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--light-background);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+
+     /* Header */
+        .header-content {
+            display: flex;
+            align-items: center; 
+            gap: 24px; 
+    
+        }
+       /* Profile Image */
+       /* W3 SCHOOL: CSS Styling Images */
+       /* https://www.w3schools.com/css/css3_images.asp */
+        .profile-pic img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--moss-green);
+            padding: 3px; 
+            background-color: var(--light-background);
+        }
+        
+        /* Information Column  */
+         .info-column {
+            flex-grow: 1; 
+            display: flex;
+            flex-direction: column;
+            gap: 4px; 
+        }
+
+         .info-column h1 {
+            font-size: 28px;
+            margin: 0;
+            color: var(--dark-green);
+            font-family: var(--textHeaderFamily)
+        }
+
+        .info-column a {
+            font-size: 16px;
+            text-decoration: none;
+            color: var(--dark-green); 
+            width: fit-content; 
+        }
+         .info__column a {
+          font-size: 16px;
+          text-decoration: none;
+          color: var(--dark-green);
+
+        }
+        .info-column a:hover {
+            text-decoration: underline;
+            color: var(--tigers-eye); 
+        }
+
+        
+    /* SOCIAL MEDIA ICONS */
+
+    /* SVG:
+    HTML SVG Graphics
+    https://www.w3schools.com/graphics/svg_intro.asp
+    https://www.w3schools.com/html/html5_svg.asp*/
+        
+        .social-column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; 
+            align-items: center; 
+        }
+
+        .social-column a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-column svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--text-dark);
+            transition: fill 0.2s ease-in-out;
+        }
+
+        .social-column a:hover svg {
+            fill: var(--tigers-eye); 
+        }
+        
+
+        /* Separetaor <HR>
+
+        How TO - Style HR (Horizontal Ruler/Line)
+        https://www.w3schools.com/howto/howto_css_style_hr.asp
+        
+        */
+    
+        .separator {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #606C38, transparent);
+            margin: 24px 0; 
+        }
+
+        .section-separator{
+            border: none;
+            height: 2px; 
+            background: linear-gradient(to right, transparent, var(--border-light), transparent);
+            margin: 32px 0; 
+        }
+
+        /* RESUME */
+        h2{
+          font-family: var(--textHeaderFamily);
+
+        }
+        .skills-columns{
+            display: flex;
+            gap: 8px;
+        }
+        .skill-column{
+            padding: 16px;
+        }
+        .skills-category{
+            font-weight: 700;
+        }
+
+
+        
+        /* CSS ::before Pseudo-element */
+        /* https://www.w3schools.com/cssref/sel_before.php */
+        /* https://www.w3schools.com/cssref/pr_gen_content.php */
+        .skills-category::before{
+              content: '■'; 
+              margin-right: 8px;
+            font-weight: 700;
+        }
+
+        
+         li{
+            list-style: none;
+        }
+
+       li::before{
+            content: '■'; 
+            margin-right: 8px;
+            font-weight: 700;
+        }
+        .job-title{
+           margin-bottom: 8px;
+
+        }
+        .company-info{
+            font-style: italic;
+            margin-top: 0;
+
+        }
+
+       .education-list > li {
+        margin-bottom: 16px;
+       }
+       .experience-list >  li {
+                margin-bottom: 8px;
+        }
+
+
+
+        /* CONVER LETTER  */
+    
+        .cover-letter p {
+            margin-bottom: 1em; 
+        }
+
+        /* Signature block styling */
+        .signature-block {
+            text-align: right;
+            margin-top: 2em;
+        }
+
+
+        #signature{
+            margin-top: 8px;
+            font-family: var(--textSignatureFamilty);
+            font-size: 48px;
+        }
+
+
+        /* MEDIA QUERIES */
+
+ @media (max-width: 768px) {
+    .page-container {
+        padding: 24px;
+        margin: 12px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .info-column {
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-column {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .skills-columns {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .skill-column {
+        padding: 0;
+    }
+    
+    .signature-block {
+         text-align: center;
+         margin-top: 1.5em;
+    }
+
+    #signature {
+        font-size: 40px;
+    }
+
+    .info-column h1 {
+        font-size: 26px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .page-container {
+        padding: 16px;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .profile-pic img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .info-column h1 {
+        font-size: 24px;
+    }
+
+    #signature {
+        font-size: 32px;
+    }
+}
